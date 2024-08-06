@@ -1,0 +1,15 @@
+---
+home: true
+title: Splash Screen Generator
+bodyClasses: page-splash-screen-generator
+destination: /splash-screen-generator.html
+---
+
+{% extends '_generator-base.html' %}
+
+{% block body %}
+{{ super() }}
+<script>
+new pages.SplashScreenGenerator();
+</script>
+{% endblock %}
