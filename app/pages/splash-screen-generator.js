@@ -36,7 +36,7 @@ export class SplashScreenGenerator extends BaseGenerator {
       targetWidth: 0,
       targetHeight: 0,
       color: 'rgba(0, 0, 0, 0)',
-      name: 'icon'
+      name: 'splash_icon'
     },
     {
       key: 'brand-icon',
@@ -48,7 +48,7 @@ export class SplashScreenGenerator extends BaseGenerator {
       targetWidth: 72,
       targetHeight: 28,
       color: 'rgba(0, 0, 0, 0)',
-      name: 'brand'
+      name: 'splash_brand'
     }
   ]
 
@@ -167,6 +167,13 @@ export class SplashScreenGenerator extends BaseGenerator {
           canvas: outCtx.canvas
         });
 
+        if (density === 'xxxhdpi') {
+          this.zipper.add({
+            name: `res/drawable/${set.name}.png`,
+            canvas: outCtx.canvas
+          });
+        }
+
         if (set.key === 'app-icon') {
           // this.setImageForSlot_(density, outCtx.canvas.toDataURL());
         }
@@ -232,6 +239,13 @@ export class SplashScreenGenerator extends BaseGenerator {
           name: `res/drawable-${orientation}-${density}/splash.png`,
           canvas: outCtx.canvas
         });
+
+        if (density === 'xxxhdpi') {
+          this.zipper.add({
+            name: `res/drawable/splash.png`,
+            canvas: outCtx.canvas
+          });
+        }
 
         if (orientation === 'land') {
           this.setImageForSlot_(density, outCtx.canvas.toDataURL());

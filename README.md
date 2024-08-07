@@ -46,3 +46,28 @@ A basic tool to generate notification icons for your Android app.
 ### Actions Bar Icon generator
 
 A basic tool to generate notification icons for your Android app.
+
+## Configuration
+
+You can configure the splash screen integration of app with the following snippets:
+
+> In `android/app/src/main/res/values-v31/styles.xml`
+
+```xml
+    <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
+        <!-- ... -->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_icon</item>
+        <item name="android:windowSplashScreenBrandingImage">@drawable/splash_brand</item>
+        <!-- ... -->
+    </style>
+```
+
+> In `android/app/src/main/res/values/styles.xml`
+
+```xml
+    <style name="AppTheme.NoActionBarLaunch" parent="AppTheme.NoActionBar">
+        <item name="android:background">@drawable/splash</item>
+        <!-- ... -->
+    </style>
+```
+
